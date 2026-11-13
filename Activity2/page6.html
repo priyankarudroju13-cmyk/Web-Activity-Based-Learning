@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sweet Bites - Cakes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff4f1;
+    color: #49251e;
+}
+
+/* Navigation */
+header {
+    background: #fffaf4;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 30px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #49251e;
+    font-size: 15px;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d72560;
+}
+
+/* Page heading */
+.page-heading {
+    text-align: center;
+    padding: 40px 15px 25px;
+    background: #ffe5e5;
+}
+
+.page-heading h1 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.page-heading p {
+    color: #795b51;
+    line-height: 1.6;
+}
+
+/* Cake cards */
+.cakes-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 25px 50px;
+}
+
+.cakes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.cake-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(70, 30, 20, 0.12);
+    transition: transform 0.3s;
+    padding-bottom: 18px;
+}
+
+.cake-card:hover {
+    transform: translateY(-6px);
+}
+
+.cake-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.cake-card h2 {
+    font-size: 19px;
+    margin: 16px 5px 10px;
+}
+
+.description {
+    color: #78645c;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 12px;
+    min-height: 40px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 12px;
+}
+
+button {
+    background: #df2863;
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #ad1948;
+}
+
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .cakes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .cakes {
+        grid-template-columns: 1fr;
+    }
+
+    .cake-card img {
+        height: 240px;
+    }
+
+    .page-heading h1 {
+        font-size: 30px;
+    }
+}
+.button{
+         background-color:aqua;
+                border:1px solid rgb(6, 8, 10);
+                border-radius:5px;
+                padding:3px;
+                text-decoration: none;
+       }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🧁 Sweet Bites
+        <small>BAKERY & CAKE SHOP</small>
+
+   
+</header>
+
+<!-- Cakes page heading -->
+<section class="page-heading">
+    <h1>Our Delicious Cakes 🎂</h1>
+    <p>Freshly baked cakes, made with love for every celebration!</p>
+</section>
+
+<!-- Cake products -->
+<main class="cakes-container">
+    <div class="cakes">
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+                 alt="Chocolate Cake">
+            <h2>Chocolate Cake</h2>
+            <p class="description">Rich chocolate layers with creamy frosting.</p>
+            <p class="price">₹450</p>
+            <button onclick="addToCart('Chocolate Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=600&q=80"
+                 alt="Vanilla Cake">
+            <h2>Vanilla Cake</h2>
+            <p class="description">Soft vanilla sponge with delicious cream.</p>
+            <p class="price">₹400</p>
+            <button onclick="addToCart('Vanilla Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80"
+                 alt="Red Velvet Cake">
+            <h2>Red Velvet Cake</h2>
+            <p class="description">Red velvet sponge with smooth cream frosting.</p>
+            <p class="price">₹500</p>
+            <button onclick="addToCart('Red Velvet Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=600&q=80"
+                 alt="Black Forest Cake">
+            <h2>Black Forest Cake</h2>
+            <p class="description">Chocolate cake topped with cream and cherries.</p>
+            <p class="price">₹480</p>
+            <button onclick="addToCart('Black Forest Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=600&q=80"
+                 alt="Strawberry Cake">
+            <h2>Strawberry Cake</h2>
+            <p class="description">Fresh strawberry flavor with whipped cream.</p>
+            <p class="price">₹450</p>
+            <button onclick="addToCart('Strawberry Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
+                 alt="Cream Cake">
+            <h2>Fresh Cream Cake</h2>
+            <p class="description">Light sponge cake with fresh cream.</p>
+            <p class="price">₹380</p>
+            <button onclick="addToCart('Fresh Cream Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1557979619-445218f326b9?auto=format&fit=crop&w=600&q=80"
+                 alt="Birthday Cake">
+            <h2>Birthday Cake</h2>
+            <p class="description">A special cake for your happiest moments.</p>
+            <p class="price">₹600</p>
+            <button onclick="addToCart('Birthday Cake')">Add to Cart</button>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=600&q=80"
+                 alt="Celebration Cake">
+            <h2>Celebration Cake</h2>
+            <p class="description">A beautiful cake for every special occasion.</p>
+            <p class="price">₹700</p>
+            <button onclick="addToCart('Celebration Cake')">Add to Cart</button>
+        </div>
+
+    </div>
+</main>
+
+
+<script>
+function addToCart(cakeName) {
+    alert(cakeName + " added to your cart!");
+}
+</script>
+<center>
+<a href="cake.html" class="button">BACK TO HOME</a>
+</center>
+</body>
+</html>
